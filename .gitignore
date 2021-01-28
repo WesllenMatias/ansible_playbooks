@@ -1,4 +1,0 @@
-hosts
-ansible.cfg
-.gitignore
-*.pem
