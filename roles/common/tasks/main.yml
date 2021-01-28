@@ -1,0 +1,24 @@
+---
+
+# Gerenciamento de Pacotes e Atualização do Sistema Operacional
+
+#- name: Atualizacao do Sistema Operacional
+#  apt:
+#    update_cache: yes
+
+- name: Instalacao de Pacotes
+  apt:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+      - bmon
+      - tmux
+      - vim
+      - nmap
+      - tcpdump
+
+- name: Configurando Timezone
+  file: src=/usr/share/zoneinfo/America/Recife dest=/etc/localtime state=link force=yes
+
+...

@@ -1,0 +1,19 @@
+---
+- hosts: rasp
+  become: yes
+  tasks:
+    - name: Instalando Python
+      apt:
+        name: python
+        state: latest
+    - name: Instalando Apache
+      apt:
+        name: httpd
+        state: latest
+      notify: restart apache
+  handlers:
+    - name: restart apache
+      systemd:
+        name: httpd
+        state: restarted
+...

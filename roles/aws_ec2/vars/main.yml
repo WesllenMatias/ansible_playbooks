@@ -1,0 +1,9 @@
+---
+instance_type: t2.micro
+security_group: groupdevops
+image: ami-007e8beb808004fdc
+keypair: autodevops
+region: us-east-1
+count: 2
+
+...
